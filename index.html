@@ -8,28 +8,85 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Boolzapp</title>
 </head>
-  <body>
+  <body class="vh-100">
     <div class="d-flex justify-content-center" id="app">
         <!--container principale-->
-        <div class="container d-flex d-column my-3 mx-4 p-0">
+        <div class="container d-flex my-3 p-0">
                 <!--parte sinistra del container-->
-                <div class="box lefBox d-flex flex-column col-4">
+                <div class="box d-flex flex-column col-4">
+                  <div class="row mx-0 bg-light">
                     <!--sezione utente principale-->
-                    <div class="d-flex justify-content-between bg-light">
-                        <div class="d-flex align-items-center p-1">
-                            <img class="userImg mx-1" src="./img/avatar_io.jpg" alt="">
-                            <span>Sofia</span>
-                        </div>
-                        <div class="d-flex align-items-center mx-1 my-1">
-                            <i class="fa-solid fa-circle-notch text-secondary"></i>
-                            <i class="fa-solid fa-message text-secondary p-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
-                        </div>
+                    <!--foto e nome user-->
+                      <div class="col-9 d-flex p-1 align-items-center">
+                          <img class="userImg mx-1" src="./img/avatar_io.jpg" alt="">
+                          <span>Sofia</span>
+                      </div>
+                      <!--icone user-->
+                      <div class="col-3 d-flex align-items-center mx-0 my-1">
+                          <i class="fa-solid fa-circle-notch text-secondary"></i>
+                          <i class="fa-solid fa-message text-secondary p-2"></i>
+                          <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
+                      </div>
+                  </div>
+                  <!--barra notifiche-->
+                  <div class="d-flex bg-info">
+                    <!--icona campanella-->
+                    <div class="d-flex align-items-center">
+                      <i class="fa-solid fa-bell-slash text-info bg-light rounded-5"></i>
                     </div>
+                    <!--testo delle notifiche-->
+                    <div class="d-flex flex-column">
+                      <span>Ricevi notifiche di nuovi messaggi</span>
+                      <small class="text-secondary text-decoration-underline">Attiva notifiche desktop</small>
+                    </div>
+                  </div>
+                  <!--barra di ricerca-->
+                  <div class="my-2 mx-2">
+                    <input class="form-control mr-sm-2 " type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                  </div>
+                  <!--chat con altri utenti-->
+                  <div></div>
                 </div>
+
                 <!--parte destra del container-->
-                <div class="box rightBox col-8">
-                </div> 
+                <div class="col-8 box d-flex flex-column flex-column mx-0">
+                  <!--sezione utente principale-->
+                  <div class="row mx-0">
+                    <!--foto user-->
+                    <div class="col-1">
+                    </div>
+                    <!--ultimo accesso e nome user-->
+                    <div class="col-10">
+                    </div>
+                    <!--icone user-->
+                    <div class="col-1 d-flex align-items-center my-1">
+                        <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+                        <i class="fa-solid fa-paperclip text-secondary p-2"></i>
+                        <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
+                    </div>
+                  </div>
+                  <!--sezione con messaggi-->
+                  <div class="row h-100 mx-0">
+                    <div class="chatBox col-12 mx-0 row">
+                        d
+                    </div>
+                  </div>
+                  <!--sezione per mandare messaggi-->
+                  <div class="row bg-light p-2 mx-0">
+                      <!--icona emoji-->
+                      <div class="col-1 align-items-center my-1">
+                        <i class="fa-regular fa-face-smile text-secondary"></i>
+                      </div>
+                        <!--text area-->
+                        <div class="col-10">
+                          <input class="form-control" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
+                        </div>
+                      <!--icona microfono-->
+                      <div class="col-1 align-items-center my-1">
+                        <i class="fa-solid fa-microphone text-secondary"></i>
+                      </div>
+                  </div> 
+              </div> 
         </div>
     </div>
 

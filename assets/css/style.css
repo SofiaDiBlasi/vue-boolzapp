@@ -1,6 +1,5 @@
 body{
-    /*background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);*/
-    background-color: pink;
+    background: no-repeat linear-gradient(#009688 20%, #d2dbdb 20% 80%);
 }
 
 .container {
@@ -18,4 +17,10 @@ body{
 .userImg {
     width: 10%;
     border-radius: 50%;
+}
+
+.chatBox {
+    max-width: 1000px;
+    background-color: red;
+    overflow-y: scroll;
 }
