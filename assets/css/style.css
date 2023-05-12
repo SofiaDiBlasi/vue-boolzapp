@@ -15,12 +15,16 @@ body{
 }
 
 .userImg {
-    width: 10%;
+    width: 40px;
     border-radius: 50%;
 }
 
 .chatBox {
     max-width: 1000px;
-    background-color: red;
+    overflow-y: scroll;
+    background-image: url(../img/mine.jpg);
+}
+
+.contactBox{
     overflow-y: scroll;
 }

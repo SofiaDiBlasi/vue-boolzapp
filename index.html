@@ -18,7 +18,7 @@
                     <!--sezione utente principale-->
                     <!--foto e nome user-->
                       <div class="col-9 d-flex p-1 align-items-center">
-                          <img class="userImg mx-1" src="./img/avatar_io.jpg" alt="">
+                          <img class="userImg mx-1" src="./assets/img/avatar_io.jpg" alt="">
                           <span>Sofia</span>
                       </div>
                       <!--icone user-->
@@ -45,7 +45,22 @@
                     <input class="form-control mr-sm-2 " type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
                   </div>
                   <!--chat con altri utenti-->
-                  <div></div>
+                  <div class="contactBox vh-100">
+                    <div v-for="(contact,i) in contacts">
+                      <div class="row mx-0 border-bottom border-light p-1">
+                        <div class="col-2">
+                          <img class="userImg" :src="contact.avatar" alt="">
+                        </div>
+                        <div class="col-8">
+                          <p class="m-0">{{contact.name}}</p>
+                          <small class="text-secondary">Ultimo messaggio inviato</small>
+                        </div>
+                        <div class="col-2">
+                          <p class="text-secondary">12:00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <!--parte destra del container-->
@@ -67,8 +82,8 @@
                   </div>
                   <!--sezione con messaggi-->
                   <div class="row h-100 mx-0">
-                    <div class="chatBox col-12 mx-0 row">
-                        d
+                    <div class="chatBox col-12 mx-0 row p-5">
+                        messaggi
                     </div>
                   </div>
                   <!--sezione per mandare messaggi-->
