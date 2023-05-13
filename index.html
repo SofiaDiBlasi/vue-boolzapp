@@ -97,7 +97,7 @@
                       </div>
                         <!--text area-->
                         <div class="col-10">
-                          <input class="form-control" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
+                          <input @keyup.enter="createNewMessage()" v-model="nuovoMessaggio" class="form-control" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
                         </div>
                       <!--icona microfono-->
                       <div class="col-1 align-items-center my-1">

@@ -7,7 +7,8 @@ const {
       return {
 
         counter:0,
-
+        nuovoMessaggio:"",
+        
         contacts: [
             {
                 name: 'Michele',
@@ -176,6 +177,29 @@ const {
     methods: {
         changeChat(position){
             this.counter = position;
+        },
+
+        createNewMessage(){
+            let nuovoMessaggio = {
+                date: Date(),
+                message: this.nuovoMessaggio,
+                status: 'sent' 
+            }
+
+            this.contacts[this.counter].messages.push(nuovoMessaggio);
+
+            this.nuovoMessaggio = "";
+
+            setTimeout(() => {
+                let nuovoMessaggioRisposta = {
+                    date: Date(),
+                    message: 'ok',
+                    status: 'received' 
+                }
+                
+                this.contacts[this.counter].messages.push(nuovoMessaggioRisposta);
+              }, 1000);
+
         }
     }
 }).mount('#app')
