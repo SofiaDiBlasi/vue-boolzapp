@@ -29,14 +29,14 @@
                       </div>
                   </div>
                   <!--barra notifiche-->
-                  <div class="d-flex bg-info">
+                  <div class="d-flex lightBlueBg">
                     <!--icona campanella-->
                     <div class="d-flex align-items-center">
-                      <i class="fa-solid fa-bell-slash text-info bg-light rounded-5"></i>
+                      <i class="fa-solid fa-bell-slash lightBlueText bg-light rounded-circle"></i>
                     </div>
                     <!--testo delle notifiche-->
                     <div class="d-flex flex-column">
-                      <span>Ricevi notifiche di nuovi messaggi</span>
+                      <span class="text-dark">Ricevi notifiche di nuovi messaggi</span>
                       <small class="text-secondary text-decoration-underline">Attiva notifiche desktop</small>
                     </div>
                   </div>
@@ -46,7 +46,7 @@
                   </div>
                   <!--chat con altri utenti-->
                   <div class="contactBox vh-100">
-                    <div v-for="(contact,i) in contacts">
+                    <div @click="changeChat(i)" :class='(counter == i) ? "lightGreyBg" : ""' v-for="(contact,i) in contacts">
                       <div class="row mx-0 border-bottom border-light p-1">
                         <div class="col-2">
                           <img class="userImg" :src="contact.avatar" alt="">
@@ -62,16 +62,17 @@
                     </div>
                   </div>
                 </div>
-
                 <!--parte destra del container-->
                 <div class="col-8 box d-flex flex-column flex-column mx-0">
                   <!--sezione utente principale-->
                   <div class="row mx-0">
                     <!--foto user-->
                     <div class="col-1">
+                      <img class="userImg" :src="contacts[counter].avatar" alt="">
                     </div>
                     <!--ultimo accesso e nome user-->
                     <div class="col-10">
+                      <p class="m-0">{{contacts[counter].name}}</p>
                     </div>
                     <!--icone user-->
                     <div class="col-1 d-flex align-items-center my-1">
@@ -83,12 +84,9 @@
                   <!--sezione con messaggi-->
                   <div class="row h-100 mx-0">
                     <div class="chatBox col-12 mx-0 p-5">
-                      <div class="row justify-content-end">
-                        <div class="sent chatMessage">mandato</div>
+                      <div :class='(message.status == "sent") ? "row justify-content-end" : "row"' v-for="message in contacts[counter].messages">
+                        <div :class='(message.status == "sent") ? "sent chatMessage" : "received chatMessage"'>{{message.message}}</div>
                       </div>
-                       <div class="row">
-                          <div class="received chatMessage">ricevuto</div>
-                       </div>
                     </div>
                   </div>
                   <!--sezione per mandare messaggi-->
@@ -109,7 +107,6 @@
               </div> 
         </div>
     </div>
-
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>

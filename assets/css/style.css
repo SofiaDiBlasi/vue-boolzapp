@@ -2,6 +2,20 @@ body{
     background: no-repeat linear-gradient(#009688 20%, #d2dbdb 20% 80%);
 }
 
+/*COLORI*/
+
+.lightBlueBg {
+    background-color: #8edafc;
+}
+
+.lightBlueBg {
+    color: #8edafc;
+}
+
+.lightGreyBg {
+    background-color: lightslategray;
+}
+
 .container {
     width: 1200px;
     height: 720px;
@@ -31,13 +45,14 @@ body{
 
 .chatMessage{
     border-radius: 10px;
-    height: 50px;
+    max-height: 500px;
     width: 300px;
     line-height: 45px;
+    margin: 10px 0px;
 }
 
 .sent {
-    background-color: greenyellow;
+    background-color: #d5f9ba;
 }
 
 .received {

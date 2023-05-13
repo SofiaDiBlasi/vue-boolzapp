@@ -5,6 +5,9 @@ const {
   createApp({
     data() {
       return {
+
+        counter:0,
+
         contacts: [
             {
                 name: 'Michele',
@@ -169,4 +172,10 @@ const {
             }
         ]
 }
-}}).mount('#app')
+},
+    methods: {
+        changeChat(position){
+            this.counter = position;
+        }
+    }
+}).mount('#app')
