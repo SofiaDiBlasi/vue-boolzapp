@@ -46,12 +46,12 @@
                       <button class="searchbar searchLens">
                         <i class="fa-solid fa-magnifying-glass lightGreyColor "></i>
                       </button>
-                      <input class="searchbar searchText" type="text" placeholder="Cerca o inizia una nuova chat">
+                      <input v-model="input" class="searchbar searchText" type="text" placeholder="Cerca o inizia una nuova chat">
                     </form>
                   </div>
                   <!--chat con altri utenti-->
                   <div class="contactBox vh-100">
-                    <div @click="changeChat(i)" :class='(counter == i) ? "lightGreyBg" : ""' v-for="(contact,i) in contacts">
+                    <div @click="changeChat(i)" :class='(counter == i) ? "lightGreyBg" : ""' v-for="(contact,i) in filteredContact()" :key="contact">
                       <div class="row mx-0 border-bottom border-light p-1">
                         <div class="col-2">
                           <img class="userImg" :src="contact.avatar" alt="">
@@ -65,6 +65,9 @@
                         </div>
                       </div>
                     </div>
+                    <div v-if="input&&!filteredContact().length">
+                      <p>No results found!</p>
+                   </div>
                   </div>
                 </div>
                 <!--parte destra del container-->
@@ -87,7 +90,7 @@
                     </div>
                   </div>
                   <!--sezione con messaggi-->
-                  <div class="row h-100 mx-0">
+                  <div class="chatBoxContainer row mx-0">
                     <div class="chatBox col-12 mx-0 p-5">
                       <div :class='(message.status == "sent") ? "row justify-content-end" : "row"' v-for="message in contacts[counter].messages">
                         <div :class='(message.status == "sent") ? "sent chatMessage" : "received chatMessage"'>{{message.message}}</div>

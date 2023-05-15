@@ -8,6 +8,7 @@ const {
 
         counter:0,
         nuovoMessaggio:"",
+        input:"",
         
         contacts: [
             {
@@ -199,6 +200,11 @@ const {
                 
                 this.contacts[this.counter].messages.push(nuovoMessaggioRisposta);
               }, 1000);
+        },
+        filteredContact(){
+            return this.contacts.filter(contact => 
+                contact.name.toLowerCase().includes(this.input.toLowerCase())
+            );
         }
     }
 }).mount('#app')

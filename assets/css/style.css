@@ -39,10 +39,15 @@ body{
     max-width: 1000px;
     overflow-y: scroll;
     background-image: url(../img/mine.jpg);
+    height: 100%;
 }
 
 .contactBox{
     overflow-y: scroll;
+}
+
+.chatBoxContainer{
+    height: calc(100% - 102px);
 }
 
 /*IMG ED ICONE*/
