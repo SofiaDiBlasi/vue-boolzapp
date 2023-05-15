@@ -112,7 +112,7 @@ const {
             },
             {
                 name: 'Claudia',
-                avatar: './assets/img/avatar_5.jpg',
+                avatar: './assets/img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -172,7 +172,7 @@ const {
                 ],
             }
         ]
-}
+    }
 },
     methods: {
         changeChat(position){
@@ -199,7 +199,6 @@ const {
                 
                 this.contacts[this.counter].messages.push(nuovoMessaggioRisposta);
               }, 1000);
-
         }
     }
 }).mount('#app')

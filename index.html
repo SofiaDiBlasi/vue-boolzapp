@@ -22,17 +22,17 @@
                           <span>Sofia</span>
                       </div>
                       <!--icone user-->
-                      <div class="col-3 d-flex align-items-center mx-0 my-1">
+                      <div class="col-3 d-flex align-items-center mx-0 my-0">
                           <i class="fa-solid fa-circle-notch text-secondary"></i>
                           <i class="fa-solid fa-message text-secondary p-2"></i>
                           <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
                       </div>
                   </div>
                   <!--barra notifiche-->
-                  <div class="d-flex lightBlueBg">
+                  <div class="d-flex lightBlueBg p-2">
                     <!--icona campanella-->
                     <div class="d-flex align-items-center">
-                      <i class="fa-solid fa-bell-slash lightBlueText bg-light rounded-circle"></i>
+                      <i class="fa-solid fa-bell-slash lightBlueText bg-light campana"></i>
                     </div>
                     <!--testo delle notifiche-->
                     <div class="d-flex flex-column">
@@ -42,7 +42,12 @@
                   </div>
                   <!--barra di ricerca-->
                   <div class="my-2 mx-2">
-                    <input class="form-control mr-sm-2 " type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                    <form>
+                      <button class="searchbar searchLens">
+                        <i class="fa-solid fa-magnifying-glass lightGreyColor "></i>
+                      </button>
+                      <input class="searchbar searchText" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </form>
                   </div>
                   <!--chat con altri utenti-->
                   <div class="contactBox vh-100">
@@ -53,29 +58,29 @@
                         </div>
                         <div class="col-8">
                           <p class="m-0">{{contact.name}}</p>
-                          <small class="text-secondary">Ultimo messaggio inviato</small>
+                          <small class="lightGreyColor">Ultimo messaggio inviato</small>
                         </div>
                         <div class="col-2">
-                          <p class="text-secondary">12:00</p>
+                          <small class="lightGreyColor">12:00</small>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!--parte destra del container-->
-                <div class="col-8 box d-flex flex-column flex-column mx-0">
+                <div class="col-8 box d-flex flex-column flex-column mx-0 bg-light">
                   <!--sezione utente principale-->
                   <div class="row mx-0">
                     <!--foto user-->
                     <div class="col-1">
-                      <img class="userImg" :src="contacts[counter].avatar" alt="">
+                      <img class="userImg mb-1 mt-1" :src="contacts[counter].avatar" alt="">
                     </div>
                     <!--ultimo accesso e nome user-->
                     <div class="col-10">
-                      <p class="m-0">{{contacts[counter].name}}</p>
+                      <p class="mb-1 mt-1 p-1">{{contacts[counter].name}}</p>
                     </div>
                     <!--icone user-->
-                    <div class="col-1 d-flex align-items-center my-1">
+                    <div class="col-1 d-flex align-items-center my-1 p-0">
                         <i class="fa-solid fa-magnifying-glass text-secondary"></i>
                         <i class="fa-solid fa-paperclip text-secondary p-2"></i>
                         <i class="fa-solid fa-ellipsis-vertical text-secondary"></i>
